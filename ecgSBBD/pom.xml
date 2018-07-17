@@ -28,9 +28,21 @@
 
 
 
-	<dependencies>
+	 <repositories>
+        <repository>
+            <id>arida-maven</id>
+            <url>http://salomaosilvasantos.github.io/maven-repo/</url>
+        </repository>
+    </repositories>
 
+    <dependencies>
 
+		<dependency>
+            <groupId>de.fuberlin.wiwiss.d2rq</groupId>
+            <artifactId>r2rml</artifactId>
+            <version>${d2rq-r2ml}</version>
+        </dependency>
+        
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

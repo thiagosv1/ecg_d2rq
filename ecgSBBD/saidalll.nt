@@ -1,0 +1,45 @@
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Full_Professor> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/1> <http://www.w3.org/2000/01/rdf-schema#label> "Yolanda Gil" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/1> <http://xmlns.com/foaf/0.1/name> "Yolanda Gil" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/2> <http://www.w3.org/2000/01/rdf-schema#label> "Varun Ratnakar" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/2> <http://xmlns.com/foaf/0.1/name> "Varun Ratnakar" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Researcher> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/3> <http://www.w3.org/2000/01/rdf-schema#label> "Jim Blythe" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/3> <http://xmlns.com/foaf/0.1/name> "Jim Blythe" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Researcher> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/4> <http://www.w3.org/2000/01/rdf-schema#label> "Andreas Eberhart" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/4> <http://xmlns.com/foaf/0.1/name> "Andreas Eberhart" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Researcher> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/5> <http://www.w3.org/2000/01/rdf-schema#label> "Borys Omelayenko" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/5> <http://xmlns.com/foaf/0.1/name> "Borys Omelayenko" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Researcher> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/6> <http://www.w3.org/2000/01/rdf-schema#label> "Andy Seaborne" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/6> <http://xmlns.com/foaf/0.1/name> "Andy Seaborne" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/9> <http://www.w3.org/2000/01/rdf-schema#label> "Alberto Reggiori" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/9> <http://xmlns.com/foaf/0.1/name> "Alberto Reggiori" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Full_Professor> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/10> <http://www.w3.org/2000/01/rdf-schema#label> "Sonia Bergamaschi" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/10> <http://xmlns.com/foaf/0.1/name> "Sonia Bergamaschi" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/11> <http://www.w3.org/2000/01/rdf-schema#label> "Francesco Guerra" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/11> <http://xmlns.com/foaf/0.1/name> "Francesco Guerra" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Researcher> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/12> <http://www.w3.org/2000/01/rdf-schema#label> "Christian Bizer" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/12> <http://xmlns.com/foaf/0.1/name> "Christian Bizer" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://annotation.semanticweb.org/iswc/iswc.daml#Researcher> .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/13> <http://www.w3.org/2000/01/rdf-schema#label> "Vania Vidal" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/13> <http://xmlns.com/foaf/0.1/name> "Vania Vidal" .
+<file:///home/salomao/git/ecg_d2rq/ecgSBBD/saidalll.nt#persons/13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .

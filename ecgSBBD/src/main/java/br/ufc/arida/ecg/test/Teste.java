@@ -7,7 +7,7 @@ public class Teste {
 	//"/home/salomao/git/ecg_d2rq/ecgSBBD/src/main/resources/mapping-iswc.ttl"
 	public static void main(String[] args) {
        
-		String arguments [] = {"-b", "http://arida.ufc.br/ecg/", "-o", "/home/salomao/git/ecg_d2rq/ecgSBBD/src/main/resources/output.nt", "/home/salomao/git/ecg_d2rq/ecgSBBD/src/main/resources/mapping-iswc.ttl"};
+		String arguments [] = {"-b", "http://arida.ufc.br/ecg/", "-o", "/home/salomao/git/ecg_d2rq/ecgSBBD/src/main/resources/triples/output.nt", "/home/salomao/git/ecg_d2rq/ecgSBBD/src/main/resources/mapping/mapping-iswc.ttl"};
 		
 		try {
 			dump_rdf dump = new  dump_rdf();

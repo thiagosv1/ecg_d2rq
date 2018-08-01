@@ -22,7 +22,7 @@
 		<!--d2rq-r2ml -->
 		<d2rq-r2ml>2.0</d2rq-r2ml>
 
-		<postgres.version>9.4-1206-jdbc42</postgres.version>
+		<postgresql.version>9.4-1206-jdbc42</postgresql.version>
 
 
 		<!--Apache Jena -->
@@ -98,16 +98,16 @@
 		</dependency>
 
 		<!--Databases -->
-
-		<!-- postgresql -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>${postgres.version}</version>
+			<version>42.2.4</version>
 		</dependency>
 
+
+
 		<!-- https://mvnrepository.com/artifact/com.hp.hpl.jena/jena -->
-		<!--Apache Jena -->
 		<!--Apache Jena -->
 		<dependency>
 			<groupId>org.apache.jena</groupId>

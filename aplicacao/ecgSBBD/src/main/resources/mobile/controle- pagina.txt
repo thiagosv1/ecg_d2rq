@@ -1,0 +1,51 @@
+Alterações em páginas PT_BR
+
+
+- HOME
+   todos os botões de contanto - ok
+   
+SOLUÇÕES
+- Advisory-services
+  todos os botões de contanto - ok
+  - advisory-services-/bpo---business-process-outsourcing.html
+	todos os botões de contanto - ok
+  - advisory-services-/itsm---it-strategy.html
+	todos os botões de contanto - ok
+  - advisory-services-/cloud-based-consulting.html
+	todos os botões de contanto - ok
+  -
+
+- application-services
+  todos os botões de contanto - ok
+
+- produto
+  todos os botões de contanto - ok
+
+  - Sophie
+    todos os botões de contanto - ok
+
+
+- Digital
+  todos os botões de contanto - ok
+
+   - marketing 
+      todos os botões de contanto - ok
+
+   - business-transformation
+      todos os botões de contanto - ok
+
+   - user-experience
+      todos os botões de contanto - ok
+
+   - leadership-transformation
+      todos os botões de contanto - ok
+
+   - iot---industry-4-0
+       todos os botões de contanto - ok
+
+- workplace--consulting-services
+  todos os botões de contanto - ok
+
+- trends.html
+
+  todos os botões de contanto - ok

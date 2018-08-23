@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.ufc.arida.projetoecg</groupId>
@@ -19,11 +18,14 @@
 
 		<jdk.version>1.8</jdk.version>
 
-		<!--d2rq e r2ml -->
+		<!--d2rq -->
 		<d2rq.version>1.0</d2rq.version>
-		<r2rml.version>1.0</r2rml.version>
 
-		<postgres.version>9.4-1206-jdbc42</postgres.version>
+		<!--Apache Jena -->
+		<jena-core.version>2.11.1</jena-core.version>
+		<jena-tdb.version>1.0.1</jena-tdb.version>
+		<jena.sdb.version>1.3.4</jena.sdb.version>
+	<postgres.version>9.4-1206-jdbc42</postgres.version>
 
 	</properties>
 
@@ -37,14 +39,28 @@
 	<dependencies>
 
 		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-core</artifactId>
+			<version>${jena-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-tdb</artifactId>
+			<version>${jena-tdb.version}</version>
+		</dependency>
+
+		<!--SDB -->
+		<dependency>
+			<groupId>com.hp.hpl.jena</groupId>
+			<artifactId>sdb</artifactId>
+			<version>${jena.sdb.version}</version>
+		</dependency>
+
+
+		<dependency>
 			<groupId>br.ufc.arida</groupId>
 			<artifactId>d2rq</artifactId>
 			<version>${d2rq.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>br.ufc.arida</groupId>
-			<artifactId>r2rml</artifactId>
-			<version>${r2rml.version}</version>
 		</dependency>
 
 		<dependency>
@@ -105,17 +121,8 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.jena/jena-core -->
-		<!-- https://mvnrepository.com/artifact/org.apache.jena/jena-core -->
-		<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>jena-core</artifactId>
-			<version>2.7.0-incubating</version>
-		</dependency>
-
-
 		<!--Databases -->
-
+		
 		<!-- postgresql -->
 		<dependency>
 			<groupId>org.postgresql</groupId>

@@ -1,0 +1,948 @@
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#>.
+@prefix jdbc: <http://d2rq.org/terms/jdbc/>.
+@prefix map: <#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix vocab: <vocab/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+map:database a d2rq:Database;
+    d2rq:jdbcURL "jdbc:postgresql://localhost:5432/cmt_renamed?autoReconnect=true";
+    d2rq:jdbcDriver "org.postgresql.Driver";
+    d2rq:username "postgres";
+    d2rq:password "postgres";
+    .
+
+# Table cmt_renamed.authors
+map:cmt_renamed_authors a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_authors;
+    d2rq:uriPattern "cmt_renamed/authors/@@cmt_renamed.authors.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.authors";
+    .
+map:cmt_renamed_authors__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_authors;
+    d2rq:property rdfs:label;
+    d2rq:pattern "authors #@@cmt_renamed.authors.id@@";
+    .
+map:cmt_renamed_authors_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_authors;
+    d2rq:property vocab:cmt_renamed_authors_id;
+    d2rq:refersToClassMap map:cmt_renamed_users;
+    d2rq:join "cmt_renamed.authors.id => cmt_renamed.users.id";
+    .
+map:cmt_renamed_authors_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_authors;
+    d2rq:property vocab:cmt_renamed_authors_id;
+    d2rq:refersToClassMap map:cmt_renamed_conf_members;
+    d2rq:join "cmt_renamed.authors.id => cmt_renamed.conf_members.id";
+    .
+
+# Table cmt_renamed.author_not_reviewers
+map:cmt_renamed_author_not_reviewers a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_author_not_reviewers;
+    d2rq:uriPattern "cmt_renamed/author_not_reviewers/@@cmt_renamed.author_not_reviewers.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.author_not_reviewers";
+    .
+map:cmt_renamed_author_not_reviewers__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_author_not_reviewers;
+    d2rq:property rdfs:label;
+    d2rq:pattern "author_not_reviewers #@@cmt_renamed.author_not_reviewers.id@@";
+    .
+map:cmt_renamed_author_not_reviewers_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_author_not_reviewers;
+    d2rq:property vocab:cmt_renamed_author_not_reviewers_id;
+    d2rq:refersToClassMap map:cmt_renamed_authors;
+    d2rq:join "cmt_renamed.author_not_reviewers.id => cmt_renamed.authors.id";
+    .
+
+# Table cmt_renamed.paper_abstracts
+map:cmt_renamed_paper_abstracts a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_paper_abstracts;
+    d2rq:uriPattern "cmt_renamed/paper_abstracts/@@cmt_renamed.paper_abstracts.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.paper_abstracts";
+    .
+map:cmt_renamed_paper_abstracts__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_paper_abstracts;
+    d2rq:property rdfs:label;
+    d2rq:pattern "paper_abstracts #@@cmt_renamed.paper_abstracts.id@@";
+    .
+map:cmt_renamed_paper_abstracts_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_paper_abstracts;
+    d2rq:property vocab:cmt_renamed_paper_abstracts_id;
+    d2rq:refersToClassMap map:cmt_renamed_papers;
+    d2rq:join "cmt_renamed.paper_abstracts.id => cmt_renamed.papers.id";
+    .
+
+# Table cmt_renamed.conf_members
+map:cmt_renamed_conf_members a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_conf_members;
+    d2rq:uriPattern "cmt_renamed/conf_members/@@cmt_renamed.conf_members.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.conf_members";
+    .
+map:cmt_renamed_conf_members__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conf_members;
+    d2rq:property rdfs:label;
+    d2rq:pattern "conf_members #@@cmt_renamed.conf_members.id@@";
+    .
+map:cmt_renamed_conf_members_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conf_members;
+    d2rq:property vocab:cmt_renamed_conf_members_id;
+    d2rq:refersToClassMap map:cmt_renamed_persons;
+    d2rq:join "cmt_renamed.conf_members.id => cmt_renamed.persons.id";
+    .
+
+# Table cmt_renamed.rejections
+map:cmt_renamed_rejections a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_rejections;
+    d2rq:uriPattern "cmt_renamed/rejections/@@cmt_renamed.rejections.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.rejections";
+    .
+map:cmt_renamed_rejections__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_rejections;
+    d2rq:property rdfs:label;
+    d2rq:pattern "rejections #@@cmt_renamed.rejections.id@@";
+    .
+map:cmt_renamed_rejections_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_rejections;
+    d2rq:property vocab:cmt_renamed_rejections_id;
+    d2rq:refersToClassMap map:cmt_renamed_decisions;
+    d2rq:join "cmt_renamed.rejections.id => cmt_renamed.decisions.id";
+    .
+
+# Table cmt_renamed.users
+map:cmt_renamed_users a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_users;
+    d2rq:uriPattern "cmt_renamed/users/@@cmt_renamed.users.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.users";
+    .
+map:cmt_renamed_users__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_users;
+    d2rq:property rdfs:label;
+    d2rq:pattern "users #@@cmt_renamed.users.id@@";
+    .
+map:cmt_renamed_users_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_users;
+    d2rq:property vocab:cmt_renamed_users_id;
+    d2rq:refersToClassMap map:cmt_renamed_persons;
+    d2rq:join "cmt_renamed.users.id => cmt_renamed.persons.id";
+    .
+
+# Table cmt_renamed.administrators
+map:cmt_renamed_administrators a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_administrators;
+    d2rq:uriPattern "cmt_renamed/administrators/@@cmt_renamed.administrators.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.administrators";
+    .
+map:cmt_renamed_administrators__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_administrators;
+    d2rq:property rdfs:label;
+    d2rq:pattern "administrators #@@cmt_renamed.administrators.id@@";
+    .
+map:cmt_renamed_administrators_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_administrators;
+    d2rq:property vocab:cmt_renamed_administrators_id;
+    d2rq:refersToClassMap map:cmt_renamed_users;
+    d2rq:join "cmt_renamed.administrators.id => cmt_renamed.users.id";
+    .
+map:cmt_renamed_administrators_accept_paper__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_administrators;
+    d2rq:property vocab:cmt_renamed_administrators_accept_paper;
+    d2rq:refersToClassMap map:cmt_renamed_papers;
+    d2rq:join "cmt_renamed.administrators.accept_paper => cmt_renamed.papers.id";
+    .
+
+# Table cmt_renamed.associated_chairs
+map:cmt_renamed_associated_chairs a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_associated_chairs;
+    d2rq:uriPattern "cmt_renamed/associated_chairs/@@cmt_renamed.associated_chairs.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.associated_chairs";
+    .
+map:cmt_renamed_associated_chairs__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_associated_chairs;
+    d2rq:property rdfs:label;
+    d2rq:pattern "associated_chairs #@@cmt_renamed.associated_chairs.id@@";
+    .
+map:cmt_renamed_associated_chairs_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_associated_chairs;
+    d2rq:property vocab:cmt_renamed_associated_chairs_id;
+    d2rq:refersToClassMap map:cmt_renamed_chairmans;
+    d2rq:join "cmt_renamed.associated_chairs.id => cmt_renamed.chairmans.id";
+    .
+
+# Table cmt_renamed.meta_reviews
+map:cmt_renamed_meta_reviews a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_meta_reviews;
+    d2rq:uriPattern "cmt_renamed/meta_reviews/@@cmt_renamed.meta_reviews.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.meta_reviews";
+    .
+map:cmt_renamed_meta_reviews__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_meta_reviews;
+    d2rq:property rdfs:label;
+    d2rq:pattern "meta_reviews #@@cmt_renamed.meta_reviews.id@@";
+    .
+map:cmt_renamed_meta_reviews_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_meta_reviews;
+    d2rq:property vocab:cmt_renamed_meta_reviews_id;
+    d2rq:refersToClassMap map:cmt_renamed_reviews;
+    d2rq:join "cmt_renamed.meta_reviews.id => cmt_renamed.reviews.id";
+    .
+
+# Table cmt_renamed.reviews
+map:cmt_renamed_reviews a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_reviews;
+    d2rq:uriPattern "cmt_renamed/reviews/@@cmt_renamed.reviews.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.reviews";
+    .
+map:cmt_renamed_reviews__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviews;
+    d2rq:property rdfs:label;
+    d2rq:pattern "reviews #@@cmt_renamed.reviews.id@@";
+    .
+map:cmt_renamed_reviews_comment a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviews;
+    d2rq:property vocab:cmt_renamed_reviews_comment;
+    d2rq:column "cmt_renamed.reviews.comment";
+    d2rq:propertyDefinitionLabel "reviews comment";
+    .
+map:cmt_renamed_reviews_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviews;
+    d2rq:property vocab:cmt_renamed_reviews_id;
+    d2rq:refersToClassMap map:cmt_renamed_documents;
+    d2rq:join "cmt_renamed.reviews.id => cmt_renamed.documents.id";
+    .
+map:cmt_renamed_reviews_written__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviews;
+    d2rq:property vocab:cmt_renamed_reviews_written;
+    d2rq:refersToClassMap map:cmt_renamed_reviewers;
+    d2rq:join "cmt_renamed.reviews.written => cmt_renamed.reviewers.id";
+    .
+
+# Table cmt_renamed.co_authors
+map:cmt_renamed_co_authors a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_co_authors;
+    d2rq:uriPattern "cmt_renamed/co_authors/@@cmt_renamed.co_authors.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.co_authors";
+    .
+map:cmt_renamed_co_authors__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_co_authors;
+    d2rq:property rdfs:label;
+    d2rq:pattern "co_authors #@@cmt_renamed.co_authors.id@@";
+    .
+map:cmt_renamed_co_authors_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_co_authors;
+    d2rq:property vocab:cmt_renamed_co_authors_id;
+    d2rq:refersToClassMap map:cmt_renamed_authors;
+    d2rq:join "cmt_renamed.co_authors.id => cmt_renamed.authors.id";
+    .
+
+# Table cmt_renamed.persons
+map:cmt_renamed_persons a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_persons;
+    d2rq:uriPattern "cmt_renamed/persons/@@cmt_renamed.persons.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.persons";
+    .
+# Table cmt_renamed.external_reviewers (n:m)
+map:cmt_renamed_external_reviewers__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_persons;
+    d2rq:property vocab:cmt_renamed_external_reviewers;
+    d2rq:refersToClassMap map:cmt_renamed_reviewers;
+    d2rq:join "cmt_renamed.external_reviewers.id => cmt_renamed.persons.id";
+    d2rq:join "cmt_renamed.external_reviewers.assigned_by_reviewer => cmt_renamed.reviewers.id";
+    .
+map:cmt_renamed_persons__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_persons;
+    d2rq:property rdfs:label;
+    d2rq:pattern "persons #@@cmt_renamed.persons.id@@";
+    .
+map:cmt_renamed_persons_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_persons;
+    d2rq:property vocab:cmt_renamed_persons_id;
+    d2rq:column "cmt_renamed.persons.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "persons id";
+    .
+map:cmt_renamed_persons_name a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_persons;
+    d2rq:property vocab:cmt_renamed_persons_name;
+    d2rq:column "cmt_renamed.persons.name";
+    d2rq:propertyDefinitionLabel "persons name";
+    .
+map:cmt_renamed_persons_email a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_persons;
+    d2rq:property vocab:cmt_renamed_persons_email;
+    d2rq:column "cmt_renamed.persons.email";
+    d2rq:propertyDefinitionLabel "persons email";
+    .
+
+# Table cmt_renamed.bids
+map:cmt_renamed_bids a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_bids;
+    d2rq:uriPattern "cmt_renamed/bids/@@cmt_renamed.bids.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.bids";
+    .
+map:cmt_renamed_bids__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_bids;
+    d2rq:property rdfs:label;
+    d2rq:pattern "bids #@@cmt_renamed.bids.id@@";
+    .
+map:cmt_renamed_bids_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_bids;
+    d2rq:property vocab:cmt_renamed_bids_id;
+    d2rq:column "cmt_renamed.bids.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "bids id";
+    .
+map:cmt_renamed_bids_bid__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_bids;
+    d2rq:property vocab:cmt_renamed_bids_bid;
+    d2rq:refersToClassMap map:cmt_renamed_papers;
+    d2rq:join "cmt_renamed.bids.bid => cmt_renamed.papers.id";
+    .
+map:cmt_renamed_bids_adjusted__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_bids;
+    d2rq:property vocab:cmt_renamed_bids_adjusted;
+    d2rq:refersToClassMap map:cmt_renamed_reviewers;
+    d2rq:join "cmt_renamed.bids.adjusted => cmt_renamed.reviewers.id";
+    .
+
+# Table cmt_renamed.conference_chairs
+map:cmt_renamed_conference_chairs a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_conference_chairs;
+    d2rq:uriPattern "cmt_renamed/conference_chairs/@@cmt_renamed.conference_chairs.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.conference_chairs";
+    .
+map:cmt_renamed_conference_chairs__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conference_chairs;
+    d2rq:property rdfs:label;
+    d2rq:pattern "conference_chairs #@@cmt_renamed.conference_chairs.id@@";
+    .
+map:cmt_renamed_conference_chairs_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conference_chairs;
+    d2rq:property vocab:cmt_renamed_conference_chairs_id;
+    d2rq:refersToClassMap map:cmt_renamed_chairmans;
+    d2rq:join "cmt_renamed.conference_chairs.id => cmt_renamed.chairmans.id";
+    .
+
+# Table cmt_renamed.papers
+map:cmt_renamed_papers a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_papers;
+    d2rq:uriPattern "cmt_renamed/papers/@@cmt_renamed.papers.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.papers";
+    .
+# Table cmt_renamed.co_author_paper (n:m)
+map:cmt_renamed_co_author_paper__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_co_author_paper;
+    d2rq:refersToClassMap map:cmt_renamed_co_authors;
+    d2rq:join "cmt_renamed.co_author_paper.pid => cmt_renamed.papers.id";
+    d2rq:join "cmt_renamed.co_author_paper.cid => cmt_renamed.co_authors.id";
+    .
+# Table cmt_renamed.paper_author (n:m)
+map:cmt_renamed_paper_author__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_paper_author;
+    d2rq:refersToClassMap map:cmt_renamed_authors;
+    d2rq:join "cmt_renamed.paper_author.pid => cmt_renamed.papers.id";
+    d2rq:join "cmt_renamed.paper_author.aid => cmt_renamed.authors.id";
+    .
+# Table cmt_renamed.paper_reviewer (n:m)
+map:cmt_renamed_paper_reviewer__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_paper_reviewer;
+    d2rq:refersToClassMap map:cmt_renamed_reviewers;
+    d2rq:join "cmt_renamed.paper_reviewer.pid => cmt_renamed.papers.id";
+    d2rq:join "cmt_renamed.paper_reviewer.rid => cmt_renamed.reviewers.id";
+    .
+# Table cmt_renamed.paper_subject_area (n:m)
+map:cmt_renamed_paper_subject_area__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_paper_subject_area;
+    d2rq:refersToClassMap map:cmt_renamed_subject_areas;
+    d2rq:join "cmt_renamed.paper_subject_area.pid => cmt_renamed.papers.id";
+    d2rq:join "cmt_renamed.paper_subject_area.sid => cmt_renamed.subject_areas.id";
+    .
+map:cmt_renamed_papers__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property rdfs:label;
+    d2rq:pattern "papers #@@cmt_renamed.papers.id@@";
+    .
+map:cmt_renamed_papers_paper_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_paper_id;
+    d2rq:column "cmt_renamed.papers.paper_id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "papers paper_id";
+    .
+map:cmt_renamed_papers_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_title;
+    d2rq:column "cmt_renamed.papers.title";
+    d2rq:propertyDefinitionLabel "papers title";
+    .
+map:cmt_renamed_papers_read_by_meta_reviewer__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_read_by_meta_reviewer;
+    d2rq:refersToClassMap map:cmt_renamed_meta_reviewers;
+    d2rq:join "cmt_renamed.papers.read_by_meta_reviewer => cmt_renamed.meta_reviewers.id";
+    .
+map:cmt_renamed_papers_decision__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_decision;
+    d2rq:refersToClassMap map:cmt_renamed_decisions;
+    d2rq:join "cmt_renamed.papers.decision => cmt_renamed.decisions.id";
+    .
+map:cmt_renamed_papers_author__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_author;
+    d2rq:refersToClassMap map:cmt_renamed_authors;
+    d2rq:join "cmt_renamed.papers.author => cmt_renamed.authors.id";
+    .
+map:cmt_renamed_papers_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_id;
+    d2rq:refersToClassMap map:cmt_renamed_documents;
+    d2rq:join "cmt_renamed.papers.id => cmt_renamed.documents.id";
+    .
+map:cmt_renamed_papers_accepted__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_accepted;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.papers.accepted => cmt_renamed.administrators.id";
+    .
+map:cmt_renamed_papers_rejected__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_papers_rejected;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.papers.rejected => cmt_renamed.administrators.id";
+    .
+# Table cmt_renamed.read_by_reviewer (n:m)
+map:cmt_renamed_read_by_reviewer__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_papers;
+    d2rq:property vocab:cmt_renamed_read_by_reviewer;
+    d2rq:refersToClassMap map:cmt_renamed_reviewers;
+    d2rq:join "cmt_renamed.read_by_reviewer.pid => cmt_renamed.papers.id";
+    d2rq:join "cmt_renamed.read_by_reviewer.rid => cmt_renamed.reviewers.id";
+    .
+
+# Table cmt_renamed.subject_areas
+map:cmt_renamed_subject_areas a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_subject_areas;
+    d2rq:uriPattern "cmt_renamed/subject_areas/@@cmt_renamed.subject_areas.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.subject_areas";
+    .
+map:cmt_renamed_subject_areas__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_subject_areas;
+    d2rq:property rdfs:label;
+    d2rq:pattern "subject_areas #@@cmt_renamed.subject_areas.id@@";
+    .
+map:cmt_renamed_subject_areas_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_subject_areas;
+    d2rq:property vocab:cmt_renamed_subject_areas_id;
+    d2rq:column "cmt_renamed.subject_areas.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "subject_areas id";
+    .
+
+# Table cmt_renamed.paper_full_versions
+map:cmt_renamed_paper_full_versions a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_paper_full_versions;
+    d2rq:uriPattern "cmt_renamed/paper_full_versions/@@cmt_renamed.paper_full_versions.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.paper_full_versions";
+    .
+map:cmt_renamed_paper_full_versions__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_paper_full_versions;
+    d2rq:property rdfs:label;
+    d2rq:pattern "paper_full_versions #@@cmt_renamed.paper_full_versions.id@@";
+    .
+map:cmt_renamed_paper_full_versions_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_paper_full_versions;
+    d2rq:property vocab:cmt_renamed_paper_full_versions_id;
+    d2rq:refersToClassMap map:cmt_renamed_papers;
+    d2rq:join "cmt_renamed.paper_full_versions.id => cmt_renamed.papers.id";
+    .
+
+# Table cmt_renamed.conference_members
+map:cmt_renamed_conference_members a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_conference_members;
+    d2rq:uriPattern "cmt_renamed/conference_members/@@cmt_renamed.conference_members.conference@@/@@cmt_renamed.conference_members.conference_member@@";
+    d2rq:classDefinitionLabel "cmt_renamed.conference_members";
+    .
+map:cmt_renamed_conference_members__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conference_members;
+    d2rq:property rdfs:label;
+    d2rq:pattern "conference_members #@@cmt_renamed.conference_members.conference@@/@@cmt_renamed.conference_members.conference_member@@";
+    .
+map:cmt_renamed_conference_members_conference_member a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conference_members;
+    d2rq:property vocab:cmt_renamed_conference_members_conference_member;
+    d2rq:column "cmt_renamed.conference_members.conference_member";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "conference_members conference_member";
+    .
+map:cmt_renamed_conference_members_conference__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conference_members;
+    d2rq:property vocab:cmt_renamed_conference_members_conference;
+    d2rq:refersToClassMap map:cmt_renamed_conferences;
+    d2rq:join "cmt_renamed.conference_members.conference => cmt_renamed.conferences.id";
+    .
+
+# Table cmt_renamed.chairmans
+map:cmt_renamed_chairmans a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_chairmans;
+    d2rq:uriPattern "cmt_renamed/chairmans/@@cmt_renamed.chairmans.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.chairmans";
+    .
+map:cmt_renamed_chairmans__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_chairmans;
+    d2rq:property rdfs:label;
+    d2rq:pattern "chairmans #@@cmt_renamed.chairmans.id@@";
+    .
+map:cmt_renamed_chairmans_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_chairmans;
+    d2rq:property vocab:cmt_renamed_chairmans_id;
+    d2rq:refersToClassMap map:cmt_renamed_conf_members;
+    d2rq:join "cmt_renamed.chairmans.id => cmt_renamed.conf_members.id";
+    .
+
+# Table cmt_renamed.acceptances
+map:cmt_renamed_acceptances a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_acceptances;
+    d2rq:uriPattern "cmt_renamed/acceptances/@@cmt_renamed.acceptances.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.acceptances";
+    .
+map:cmt_renamed_acceptances__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_acceptances;
+    d2rq:property rdfs:label;
+    d2rq:pattern "acceptances #@@cmt_renamed.acceptances.id@@";
+    .
+map:cmt_renamed_acceptances_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_acceptances;
+    d2rq:property vocab:cmt_renamed_acceptances_id;
+    d2rq:refersToClassMap map:cmt_renamed_decisions;
+    d2rq:join "cmt_renamed.acceptances.id => cmt_renamed.decisions.id";
+    .
+
+# Table cmt_renamed.set_max_papers
+map:cmt_renamed_set_max_papers a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_set_max_papers;
+    d2rq:uriPattern "cmt_renamed/set_max_papers/@@cmt_renamed.set_max_papers.administrator@@/@@cmt_renamed.set_max_papers.program_committee_member@@";
+    d2rq:classDefinitionLabel "cmt_renamed.set_max_papers";
+    .
+map:cmt_renamed_set_max_papers__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_set_max_papers;
+    d2rq:property rdfs:label;
+    d2rq:pattern "set_max_papers #@@cmt_renamed.set_max_papers.administrator@@/@@cmt_renamed.set_max_papers.program_committee_member@@";
+    .
+map:cmt_renamed_set_max_papers_program_committee_member a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_set_max_papers;
+    d2rq:property vocab:cmt_renamed_set_max_papers_program_committee_member;
+    d2rq:column "cmt_renamed.set_max_papers.program_committee_member";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "set_max_papers program_committee_member";
+    .
+map:cmt_renamed_set_max_papers_administrator__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_set_max_papers;
+    d2rq:property vocab:cmt_renamed_set_max_papers_administrator;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.set_max_papers.administrator => cmt_renamed.administrators.id";
+    .
+
+# Table cmt_renamed.program_committee_members
+map:cmt_renamed_program_committee_members a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_program_committee_members;
+    d2rq:uriPattern "cmt_renamed/program_committee_members/@@cmt_renamed.program_committee_members.program_committee@@/@@cmt_renamed.program_committee_members.program_committee_member@@";
+    d2rq:classDefinitionLabel "cmt_renamed.program_committee_members";
+    .
+map:cmt_renamed_program_committee_members__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_members;
+    d2rq:property rdfs:label;
+    d2rq:pattern "program_committee_members #@@cmt_renamed.program_committee_members.program_committee@@/@@cmt_renamed.program_committee_members.program_committee_member@@";
+    .
+map:cmt_renamed_program_committee_members_program_committee_member a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_members;
+    d2rq:property vocab:cmt_renamed_program_committee_members_program_committee_member;
+    d2rq:column "cmt_renamed.program_committee_members.program_committee_member";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "program_committee_members program_committee_member";
+    .
+map:cmt_renamed_program_committee_members_program_committee__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_members;
+    d2rq:property vocab:cmt_renamed_program_committee_members_program_committee;
+    d2rq:refersToClassMap map:cmt_renamed_program_committees;
+    d2rq:join "cmt_renamed.program_committee_members.program_committee => cmt_renamed.program_committees.id";
+    .
+
+# Table cmt_renamed.preferences
+map:cmt_renamed_preferences a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_preferences;
+    d2rq:uriPattern "cmt_renamed/preferences/@@cmt_renamed.preferences.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.preferences";
+    .
+map:cmt_renamed_preferences__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_preferences;
+    d2rq:property rdfs:label;
+    d2rq:pattern "preferences #@@cmt_renamed.preferences.id@@";
+    .
+map:cmt_renamed_preferences_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_preferences;
+    d2rq:property vocab:cmt_renamed_preferences_id;
+    d2rq:column "cmt_renamed.preferences.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "preferences id";
+    .
+
+# Table cmt_renamed.program_committee_chairs
+map:cmt_renamed_program_committee_chairs a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_program_committee_chairs;
+    d2rq:uriPattern "cmt_renamed/program_committee_chairs/@@cmt_renamed.program_committee_chairs.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.program_committee_chairs";
+    .
+# Table cmt_renamed.program_committee_chair_review (n:m)
+map:cmt_renamed_program_committee_chair_review__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_chairs;
+    d2rq:property vocab:cmt_renamed_program_committee_chair_review;
+    d2rq:refersToClassMap map:cmt_renamed_reviews;
+    d2rq:join "cmt_renamed.program_committee_chair_review.pid => cmt_renamed.program_committee_chairs.id";
+    d2rq:join "cmt_renamed.program_committee_chair_review.rid => cmt_renamed.reviews.id";
+    .
+map:cmt_renamed_program_committee_chairs__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_chairs;
+    d2rq:property rdfs:label;
+    d2rq:pattern "program_committee_chairs #@@cmt_renamed.program_committee_chairs.id@@";
+    .
+map:cmt_renamed_program_committee_chairs_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_chairs;
+    d2rq:property vocab:cmt_renamed_program_committee_chairs_id;
+    d2rq:refersToClassMap map:cmt_renamed_pc_members;
+    d2rq:join "cmt_renamed.program_committee_chairs.id => cmt_renamed.pc_members.id";
+    .
+map:cmt_renamed_program_committee_chairs_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committee_chairs;
+    d2rq:property vocab:cmt_renamed_program_committee_chairs_id;
+    d2rq:refersToClassMap map:cmt_renamed_chairmans;
+    d2rq:join "cmt_renamed.program_committee_chairs.id => cmt_renamed.chairmans.id";
+    .
+
+# Table cmt_renamed.pc_members
+map:cmt_renamed_pc_members a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_pc_members;
+    d2rq:uriPattern "cmt_renamed/pc_members/@@cmt_renamed.pc_members.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.pc_members";
+    .
+map:cmt_renamed_pc_members__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_pc_members;
+    d2rq:property rdfs:label;
+    d2rq:pattern "pc_members #@@cmt_renamed.pc_members.id@@";
+    .
+map:cmt_renamed_pc_members_max_papers a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_pc_members;
+    d2rq:property vocab:cmt_renamed_pc_members_max_papers;
+    d2rq:column "cmt_renamed.pc_members.max_papers";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "pc_members max_papers";
+    .
+map:cmt_renamed_pc_members_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_pc_members;
+    d2rq:property vocab:cmt_renamed_pc_members_id;
+    d2rq:refersToClassMap map:cmt_renamed_conf_members;
+    d2rq:join "cmt_renamed.pc_members.id => cmt_renamed.conf_members.id";
+    .
+map:cmt_renamed_pc_members_added__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_pc_members;
+    d2rq:property vocab:cmt_renamed_pc_members_added;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.pc_members.added => cmt_renamed.administrators.id";
+    .
+
+# Table cmt_renamed.conferences
+map:cmt_renamed_conferences a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_conferences;
+    d2rq:uriPattern "cmt_renamed/conferences/@@cmt_renamed.conferences.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.conferences";
+    .
+# Table cmt_renamed.administrator_conference (n:m)
+map:cmt_renamed_administrator_conference__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_administrator_conference;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.administrator_conference.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.administrator_conference.aid => cmt_renamed.administrators.id";
+    .
+# Table cmt_renamed.conference_administrator (n:m)
+map:cmt_renamed_conference_administrator__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conference_administrator;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.conference_administrator.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.conference_administrator.aid => cmt_renamed.administrators.id";
+    .
+map:cmt_renamed_conferences__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property rdfs:label;
+    d2rq:pattern "conferences #@@cmt_renamed.conferences.id@@";
+    .
+map:cmt_renamed_conferences_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_id;
+    d2rq:column "cmt_renamed.conferences.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "conferences id";
+    .
+map:cmt_renamed_conferences_site_url a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_site_url;
+    d2rq:column "cmt_renamed.conferences.site_url";
+    d2rq:propertyDefinitionLabel "conferences site_url";
+    .
+map:cmt_renamed_conferences_accepts_hardcopy_submissions a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_accepts_hardcopy_submissions;
+    d2rq:column "cmt_renamed.conferences.accepts_hardcopy_submissions";
+    d2rq:propertyDefinitionLabel "conferences accepts_hardcopy_submissions";
+    .
+map:cmt_renamed_conferences_logo_url a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_logo_url;
+    d2rq:column "cmt_renamed.conferences.logo_url";
+    d2rq:propertyDefinitionLabel "conferences logo_url";
+    .
+map:cmt_renamed_conferences_date a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_date;
+    d2rq:column "cmt_renamed.conferences.date";
+    d2rq:datatype xsd:date;
+    d2rq:propertyDefinitionLabel "conferences date";
+    .
+map:cmt_renamed_conferences_name a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_name;
+    d2rq:column "cmt_renamed.conferences.name";
+    d2rq:propertyDefinitionLabel "conferences name";
+    .
+map:cmt_renamed_conferences_reviews_per_paper a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_conferences_reviews_per_paper;
+    d2rq:column "cmt_renamed.conferences.reviews_per_paper";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "conferences reviews_per_paper";
+    .
+# Table cmt_renamed.details_entered (n:m)
+map:cmt_renamed_details_entered__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_details_entered;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.details_entered.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.details_entered.aid => cmt_renamed.administrators.id";
+    .
+# Table cmt_renamed.enable_virtual_meeting (n:m)
+map:cmt_renamed_enable_virtual_meeting__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_enable_virtual_meeting;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.enable_virtual_meeting.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.enable_virtual_meeting.aid => cmt_renamed.administrators.id";
+    .
+# Table cmt_renamed.finalize_paper_assignment (n:m)
+map:cmt_renamed_finalize_paper_assignment__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_finalize_paper_assignment;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.finalize_paper_assignment.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.finalize_paper_assignment.aid => cmt_renamed.administrators.id";
+    .
+# Table cmt_renamed.hardcopy_mailing_manifests_p (n:m)
+map:cmt_renamed_hardcopy_mailing_manifests_p__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_hardcopy_mailing_manifests_p;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.hardcopy_mailing_manifests_p.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.hardcopy_mailing_manifests_p.aid => cmt_renamed.administrators.id";
+    .
+# Table cmt_renamed.paper_assignment_tools_run (n:m)
+map:cmt_renamed_paper_assignment_tools_run__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_conferences;
+    d2rq:property vocab:cmt_renamed_paper_assignment_tools_run;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.paper_assignment_tools_run.cid => cmt_renamed.conferences.id";
+    d2rq:join "cmt_renamed.paper_assignment_tools_run.aid => cmt_renamed.administrators.id";
+    .
+
+# Table cmt_renamed.mark_conflict_interests
+map:cmt_renamed_mark_conflict_interests a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_mark_conflict_interests;
+    d2rq:uriPattern "cmt_renamed/mark_conflict_interests/@@cmt_renamed.mark_conflict_interests.conference_member@@/@@cmt_renamed.mark_conflict_interests.paper@@";
+    d2rq:classDefinitionLabel "cmt_renamed.mark_conflict_interests";
+    .
+map:cmt_renamed_mark_conflict_interests__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_mark_conflict_interests;
+    d2rq:property rdfs:label;
+    d2rq:pattern "mark_conflict_interests #@@cmt_renamed.mark_conflict_interests.conference_member@@/@@cmt_renamed.mark_conflict_interests.paper@@";
+    .
+map:cmt_renamed_mark_conflict_interests_conference_member a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_mark_conflict_interests;
+    d2rq:property vocab:cmt_renamed_mark_conflict_interests_conference_member;
+    d2rq:column "cmt_renamed.mark_conflict_interests.conference_member";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "mark_conflict_interests conference_member";
+    .
+map:cmt_renamed_mark_conflict_interests_paper__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_mark_conflict_interests;
+    d2rq:property vocab:cmt_renamed_mark_conflict_interests_paper;
+    d2rq:refersToClassMap map:cmt_renamed_papers;
+    d2rq:join "cmt_renamed.mark_conflict_interests.paper => cmt_renamed.papers.id";
+    .
+
+# Table cmt_renamed.program_committees
+map:cmt_renamed_program_committees a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_program_committees;
+    d2rq:uriPattern "cmt_renamed/program_committees/@@cmt_renamed.program_committees.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.program_committees";
+    .
+map:cmt_renamed_program_committees__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committees;
+    d2rq:property rdfs:label;
+    d2rq:pattern "program_committees #@@cmt_renamed.program_committees.id@@";
+    .
+map:cmt_renamed_program_committees_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committees;
+    d2rq:property vocab:cmt_renamed_program_committees_id;
+    d2rq:column "cmt_renamed.program_committees.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "program_committees id";
+    .
+map:cmt_renamed_program_committees_label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_program_committees;
+    d2rq:property vocab:cmt_renamed_program_committees_label;
+    d2rq:column "cmt_renamed.program_committees.label";
+    d2rq:propertyDefinitionLabel "program_committees label";
+    .
+
+# Table cmt_renamed.meta_reviewers
+map:cmt_renamed_meta_reviewers a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_meta_reviewers;
+    d2rq:uriPattern "cmt_renamed/meta_reviewers/@@cmt_renamed.meta_reviewers.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.meta_reviewers";
+    .
+map:cmt_renamed_meta_reviewers__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_meta_reviewers;
+    d2rq:property rdfs:label;
+    d2rq:pattern "meta_reviewers #@@cmt_renamed.meta_reviewers.id@@";
+    .
+map:cmt_renamed_meta_reviewers_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_meta_reviewers;
+    d2rq:property vocab:cmt_renamed_meta_reviewers_id;
+    d2rq:refersToClassMap map:cmt_renamed_reviewers;
+    d2rq:join "cmt_renamed.meta_reviewers.id => cmt_renamed.reviewers.id";
+    .
+
+# Table cmt_renamed.reviewers
+map:cmt_renamed_reviewers a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_reviewers;
+    d2rq:uriPattern "cmt_renamed/reviewers/@@cmt_renamed.reviewers.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.reviewers";
+    .
+# Table cmt_renamed.reviewer_administrator (n:m)
+map:cmt_renamed_reviewer_administrator__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviewers;
+    d2rq:property vocab:cmt_renamed_reviewer_administrator;
+    d2rq:refersToClassMap map:cmt_renamed_administrators;
+    d2rq:join "cmt_renamed.reviewer_administrator.rid => cmt_renamed.reviewers.id";
+    d2rq:join "cmt_renamed.reviewer_administrator.aid => cmt_renamed.administrators.id";
+    .
+map:cmt_renamed_reviewers__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviewers;
+    d2rq:property rdfs:label;
+    d2rq:pattern "reviewers #@@cmt_renamed.reviewers.id@@";
+    .
+map:cmt_renamed_reviewers_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviewers;
+    d2rq:property vocab:cmt_renamed_reviewers_id;
+    d2rq:refersToClassMap map:cmt_renamed_users;
+    d2rq:join "cmt_renamed.reviewers.id => cmt_renamed.users.id";
+    .
+map:cmt_renamed_reviewers_id__ref a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_reviewers;
+    d2rq:property vocab:cmt_renamed_reviewers_id;
+    d2rq:refersToClassMap map:cmt_renamed_conf_members;
+    d2rq:join "cmt_renamed.reviewers.id => cmt_renamed.conf_members.id";
+    .
+
+# Table cmt_renamed.decisions
+map:cmt_renamed_decisions a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_decisions;
+    d2rq:uriPattern "cmt_renamed/decisions/@@cmt_renamed.decisions.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.decisions";
+    .
+map:cmt_renamed_decisions__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_decisions;
+    d2rq:property rdfs:label;
+    d2rq:pattern "decisions #@@cmt_renamed.decisions.id@@";
+    .
+map:cmt_renamed_decisions_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_decisions;
+    d2rq:property vocab:cmt_renamed_decisions_id;
+    d2rq:column "cmt_renamed.decisions.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "decisions id";
+    .
+
+# Table cmt_renamed.documents
+map:cmt_renamed_documents a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:class vocab:cmt_renamed_documents;
+    d2rq:uriPattern "cmt_renamed/documents/@@cmt_renamed.documents.id@@";
+    d2rq:classDefinitionLabel "cmt_renamed.documents";
+    .
+map:cmt_renamed_documents__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_documents;
+    d2rq:property rdfs:label;
+    d2rq:pattern "documents #@@cmt_renamed.documents.id@@";
+    .
+map:cmt_renamed_documents_id a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_documents;
+    d2rq:property vocab:cmt_renamed_documents_id;
+    d2rq:column "cmt_renamed.documents.id";
+    d2rq:datatype xsd:integer;
+    d2rq:propertyDefinitionLabel "documents id";
+    .
+# Table cmt_renamed.person_document (n:m)
+map:cmt_renamed_person_document__link a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:cmt_renamed_documents;
+    d2rq:property vocab:cmt_renamed_person_document;
+    d2rq:refersToClassMap map:cmt_renamed_persons;
+    d2rq:join "cmt_renamed.person_document.did => cmt_renamed.documents.id";
+    d2rq:join "cmt_renamed.person_document.pid => cmt_renamed.persons.id";
+    .
+
+
